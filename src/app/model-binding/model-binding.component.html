@@ -1,0 +1,30 @@
+<h3>
+    model-binding!
+</h3>
+
+
+<fieldset>
+    <label class="block" for="">Hi {{customer.name}}</label>
+    <label class="block" for="">City is {{customer.address.city}}</label>
+    <label class="block" for="">Street is {{customer.address.street}}</label>
+
+    <select [(ngModel)]="customer.address.region" class="inline-block">
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+    </select>
+
+    <p>you are in {{customer.address.region}}</p>
+
+</fieldset>
+
+<fieldset>
+    <input type="text" name="name" [value]="customer.name">
+    <input type="text" name="name" [value]="customer.name" (input)="customer.name= $event.target.value">
+</fieldset>
+
+<fieldset>
+    <label for="city">City :</label> <input type="text" name="city" [(ngModel)]="customer.address.city">
+    <label for="street">Street: </label> <input type="text" name="street" [ngModel]="customer.address.street" (ngModelChange)="customer.address.street=$event">
+</fieldset>

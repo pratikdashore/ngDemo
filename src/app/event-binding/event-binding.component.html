@@ -1,0 +1,17 @@
+<h4>
+    event-binding works!
+</h4>
+
+<button class="block" (click)="toggleAddress()" type="button">Toggle Content</button>
+<div [hidden]="hideAddress">
+    <fieldset>
+        <label [style.color]="color" for="">Selected color is {{color}}</label>
+        <button [style.color]="color" type="button" (click)="toggleColor()"> Change Color </button>
+
+        <select (change)="changeColor($event.target.value)">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+        </select>
+    </fieldset>
+</div>

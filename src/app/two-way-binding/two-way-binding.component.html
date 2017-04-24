@@ -1,0 +1,29 @@
+<h3>
+    two-way-binding!
+</h3>
+
+<fieldset>
+    <label class="block" for="">Hi {{name}}</label>
+    <label class="block" for="">City is {{city}}</label>
+    <label class="block" for="">Street is {{street}}</label>
+
+    <select [(ngModel)]="region" class="inline-block">
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+    </select>
+
+    <p>you are in {{region}}</p>
+
+</fieldset>
+
+<fieldset>
+    <input type="text" name="name" [value]="name">
+    <input type="text" name="name" [value]="name" (input)="name= $event.target.value">
+</fieldset>
+
+<fieldset>
+    <label for="city">City :</label> <input type="text" name="city" [(ngModel)]="city">
+    <label for="street">Street: </label> <input type="text" name="street" [ngModel]="street" (ngModelChange)="street=$event">
+</fieldset>

@@ -1,0 +1,15 @@
+<h3><button (click)="moveLeft()" type="button"><</button> {{customer.name}}<button (click)="moveRight()" type="button">></button> </h3>
+
+<div *ngIf="customer">
+    <fieldset>
+        <label class="inline-block" for="">Hi {{customer.name}}</label>
+        <label class="inline-block" for="">City is {{customer.address.city}}</label>
+        <label class="inline-block" for="">Street is {{customer.address.street}}</label>
+        <label class="inline-block" for="">you are in {{customer.address.region}}</label>
+    </fieldset>
+    <fieldset>
+        <label for="name">Name :</label> <input type="text" name="name" [(ngModel)]="customer.name">
+        <app-customer-address [address]="customer.address"></app-customer-address>
+    </fieldset>
+
+</div>

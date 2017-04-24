@@ -1,0 +1,8 @@
+.selected {
+    font-weight: bold;
+    color: purple;
+}
+
+li:hover {
+    cursor: pointer;
+}

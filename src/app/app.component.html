@@ -1,3 +1,39 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
+<div class="flex-container">
+    <div class="flex-grow-1">
+        <ul class="list-style-none">
+            <li><label class="inline-block" for="propertyBind">Property Binding</label><input type="checkbox" name="propertyBind" [(ngModel)]="showPropertyBind"></li>
+            <li><label class="inline-block" for="eventBind">Event Binding</label><input type="checkbox" name="eventBind" [(ngModel)]="showEventBind" /></li>
+            <li><label class="inline-block" for="twoWayBind">Two Way Binding</label><input type="checkbox" name="twoWayBind" [(ngModel)]="showTwoWayBind" /></li>
+            <li><label class="inline-block" for="modelBind">Model Binding</label><input type="checkbox" name="modelBind" [(ngModel)]="showModelBind" /></li>
+            <li><label class="inline-block" for="listBind">List Binding</label><input type="checkbox" name="listBind" [(ngModel)]="showListBind" /></li>
+            <li><label class="inline-block" for="nestedComponents">Nested Components</label><input type="checkbox" name="nestedComponents" [(ngModel)]="showNestedComponents" /></li>
+        </ul>
+
+    </div>
+    <div class="flex-grow-5">
+        <div class="flex-container flex-container-wrap">
+            <div *ngIf="showPropertyBind" class="flex-grow-1">
+                <app-property-binding></app-property-binding>
+
+            </div>
+            <div *ngIf="showEventBind" class="flex-grow-1">
+                <app-event-binding></app-event-binding>
+            </div>
+            <div *ngIf="showTwoWayBind" class="flex-grow-1 ">
+                <app-two-way-binding></app-two-way-binding>
+            </div>
+            <div *ngIf="showModelBind" class="flex-grow-1 ">
+                <app-model-binding></app-model-binding>
+            </div>
+            <div *ngIf="showListBind" class="flex-grow-1 ">
+                <app-list-binding></app-list-binding>
+            </div>
+            <div *ngIf="showNestedComponents" class="flex-grow-1 ">
+                <app-nested-components></app-nested-components>
+            </div>
+        </div>
+    </div>
+</div>
