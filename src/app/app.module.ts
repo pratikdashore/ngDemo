@@ -15,6 +15,7 @@ import { CustomerDetailComponent } from './nested-components/customer-detail/cus
 import { CustomerAddressComponent } from './nested-components/customer-address/customer-address.component';
 import { DataService } from './services/data.service';
 import { LoggerService } from './services/logger.service';
+import { TestPipe } from './pipes/test.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoggerService } from './services/logger.service';
     NestedComponentsComponent,
     CustomersListComponent,
     CustomerDetailComponent,
-    CustomerAddressComponent
+    CustomerAddressComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,

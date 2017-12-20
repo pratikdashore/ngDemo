@@ -3,14 +3,16 @@ import { Observable } from 'rxjs/observable';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/do';
-
+import "rxjs/add/operator/map";
+import { Http, Response } from "@angular/http";
 
 import { Customers, Customer } from '../models/customer';
 import { LoggerService } from './logger.service';
+
 @Injectable()
 export class DataService {
 
-  constructor(private loggerService: LoggerService) {
+  constructor(private loggerService: LoggerService, private http: Http) {
 
   }
 
@@ -38,6 +40,10 @@ export class DataService {
       }, () => {
         this.loggerService.log('Error in Observable');
       });
+  }
+
+  getData<T>(): Observable<T> {
+    return this.http.get('/api/hello').map((res: Response) => res.json().data as T);
   }
 
 }

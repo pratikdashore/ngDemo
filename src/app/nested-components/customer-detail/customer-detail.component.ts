@@ -9,14 +9,14 @@ import { Customer } from '../../models/customer';
 export class CustomerDetailComponent implements OnInit {
 
   @Input() customer: Customer;
-  @Output() shift = new EventEmitter<number>();
+  @Output() shiftC = new EventEmitter<number>();
 
   moveLeft() {
-    this.shift.emit(-1);
+    this.shiftC.emit(-1);
   }
 
   moveRight() {
-    this.shift.emit(1);
+    this.shiftC.emit(1);
   }
 
 
